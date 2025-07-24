@@ -1,0 +1,289 @@
+/* style.css - Ultra Professional Modern UI */
+
+:root {
+  --bg-color: #f5f7fa;
+  --primary: #ff9800;
+  --secondary: #f44336;
+  --accent: #ffffff;
+  --text-dark: #1e1e1e;
+  --text-light: #ffffff;
+  --border-radius: 16px;
+  --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  --font-main: 'Ubuntu', sans-serif;
+  --font-heading: 'Poetsen One', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+body {
+  background: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: var(--text-dark);
+}
+
+.container {
+  width: 100%;
+  max-width: 960px;
+  background: var(--accent);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+/* Form Section */
+#form, #display {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  height: 96vh;
+}
+
+#form {
+  display: flex;
+  background-color: var(--primary);
+  padding: 40px;
+  border-radius: var(--border-radius);
+  font-size: 1.1rem;
+  max-width: 400px;
+  color: var(--text-light);
+  box-shadow: var(--box-shadow);
+}
+
+#form h1 {
+  font-size: 2.5rem;
+  font-family: var(--font-heading);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+/* Input Fields */
+.player {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.player label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.player input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.player input:focus {
+  border-color: var(--secondary);
+}
+
+/* Buttons */
+button, .b1, .b2, .b3, .b4 {
+  padding: 12px 24px;
+  border: none;
+  background-color: var(--secondary);
+  color: white;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 220px;
+}
+
+button:hover, .b1:hover, .b2:hover, .b3:hover, .b4:hover {
+  background-color: #c62828;
+  transform: scale(1.05);
+}
+
+/* Game Display Section */
+#display {
+  background-color: var(--primary);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  color: var(--text-light);
+  height:97vh;
+}
+
+#winner {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(90deg, #ff3b3b, #ffc107, #ff0000);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite, pop 0.6s ease-in-out;
+  text-shadow: 0 0 8px rgba(255, 255, 0, 0.5);
+}
+
+#score {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* Score Card Styling */
+.score1, .score2 {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.score1:hover, .score2:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+#player1, #player2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+.box1, .box2 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--text-dark);
+  background-color: #fff;
+  padding: 10px 16px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+
+/* Game Board */
+.gamescreen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.cell {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  color: var(--text-dark);
+}
+
+.cell:hover {
+  background-color: #f0f0f0;
+}
+
+.cell.win {
+  background-color: #fff59d !important;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 235, 59, 0.8);
+}
+
+/* Controls */
+.control-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  #form {
+    padding: 25px;
+  }
+
+  .gamescreen {
+    gap: 10px;
+  }
+
+  .cell {
+    height: 80px;
+    font-size: 2rem;
+  }
+
+  .control-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #form h1 {
+    font-size: 2rem;
+  }
+
+  .cell {
+    height: 70px;
+    font-size: 1.8rem;
+  }
+
+  .gamescreen {
+    gap: 8px;
+  }
+
+  button {
+    max-width: 100%;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Pop-in animation */
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}

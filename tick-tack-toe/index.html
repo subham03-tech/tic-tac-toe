@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&family=Ubuntu:wght@300&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Game Form -->
+  <div id="form">
+    <h1>TIC TAC TOE</h1>
+    <div class="player">
+      <label for="player-1">Player 1:</label>
+      <input type="text" id="player-1" placeholder="Enter name for Player 1" />
+    </div>
+    <div class="player">
+      <label for="player-2">Player 2:</label>
+      <input type="text" id="player-2" placeholder="Enter name for Player 2" />
+    </div>
+    <div class="control-btns">
+      <button class="b3" type="button" onclick="startGame()">Start</button>
+      <button class="b4" type="button" onclick="startWithoutName()">Start Without Name</button>
+    </div>
+  </div>
+
+  <!-- Game Display -->
+  <div id="display">
+    <h1 id="winner"></h1>
+
+    <div id="score">
+      <div class="score1">
+        <span id="player1">X</span>
+        <div class="box1" id="player1-score">0</div>
+      </div>
+      <div class="score2">
+        <span id="player2">O</span>
+        <div class="box2" id="player2-score">0</div>
+      </div>
+    </div>
+
+    <!-- Game Board -->
+    <div class="gamescreen">
+      <div class="cell" id="0"></div>
+      <div class="cell" id="1"></div>
+      <div class="cell" id="2"></div>
+      <div class="cell" id="3"></div>
+      <div class="cell" id="4"></div>
+      <div class="cell" id="5"></div>
+      <div class="cell" id="6"></div>
+      <div class="cell" id="7"></div>
+      <div class="cell" id="8"></div>
+    </div>
+
+    <!-- Control Buttons -->
+    <div class="control-btns">
+      <button class="b1" onclick="restart()">Restart</button>
+      <button class="b2" onclick="reset()">Reset</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+
+</html>
